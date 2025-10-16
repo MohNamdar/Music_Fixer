@@ -70,6 +70,8 @@ def set_tags_cover(file_path, title=None, artist=None, album=None, year=None, co
 
         # Remove Image file after done the cover fixing
         os.remove(cover_path)
+    else:
+        logger.add_not_fixed(file_path)
 
     # rename file to the certain format
     if title and artist:
@@ -81,8 +83,9 @@ def set_tags_cover(file_path, title=None, artist=None, album=None, year=None, co
             os.rename(file_path, new_path)
             file_path = new_path
             logger.log(f"📝 File renamed to: {new_filename}")
+    
+    logger.log(f"✅ Tags saved successfully for: {os.path.basename(file_path)}")    
 
-    logger.log(f"✅ Tags saved successfully for: {os.path.basename(file_path)}")
     return file_path
 
 

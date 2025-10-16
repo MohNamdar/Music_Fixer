@@ -10,13 +10,17 @@ class Logger():
 
     def __init__(self):
         self.cover_changed_count = 0
+        self.not_fixed_musics = []
 
     def count_cover_change(self):
         self.cover_changed_count += 1
 
+    def add_not_fixed(self, query):
+        self.not_fixed_musics.append(query)
+
     def summary(self):
-        self.log(
-            f"✅ Total covers changed: {self.cover_changed_count}", level="SUMMERY")
+        message = f"✅ Total covers changed: {self.cover_changed_count} \n\n‼️ not fixed musics: \n{"\n".join(self.not_fixed_musics)}"
+        self.log(message, level="SUMMERY")
 
     def log(self, message, level="INFO"):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
