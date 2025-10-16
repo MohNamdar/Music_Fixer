@@ -37,6 +37,6 @@ cd Music_Fixer
 python main.py
 ```
 
-* Make sure the music files you want to fix are placed in the `Music_Fixer/musics` folder.
+* Make sure the music files you want to fix are placed in the `Music_Fixer/musics` folder (Remove default file).
 * Install the required modules listed in `requirements.txt` before running the script.
 
