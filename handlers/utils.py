@@ -36,4 +36,5 @@ def clean_music_filename(filename: str) -> str:
     filename = re.sub(r'\(.*?\)', '', filename)
     filename = re.sub(r'\[.*?\]', '', filename)
     filename = re.sub(r'\s+', ' ', filename).strip()
+    filename = re.sub(r'[\\/:"*?<>|]+', '', filename)
     return filename
