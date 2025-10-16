@@ -1,7 +1,6 @@
 import re
 import os
 from datetime import datetime
-import aiofiles
 
 LOG_FILE = "logs/log.txt"
 os.makedirs("logs", exist_ok=True)
